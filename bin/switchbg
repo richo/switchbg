@@ -1,10 +1,10 @@
 #!/bin/sh
 if which feh > /dev/null; then
     if [ -n "$RANDOM_BACKGROUND" ]; then
-        cd $RANDOM_BACKGROUND
+        cd "$RANDOM_BACKGROUND"
         set -- *
         n=$(echo $# | awk '{srand(); print int(rand()*$0) + 1}')
-        eval "bg=$RANDOM_BACKGROUND/\$$n"
+        eval "bg='$RANDOM_BACKGROUND'/\$$n"
     else
         bg=~/.background
     fi
